@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Closet App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 公開 URL
+[Closet App (Netlify)](https://frabjous-cassata-69b307.netlify.app/)
 
-## Available Scripts
+## 概要
+未完成（現在Netlify でフロントのみ公開している段階です。）  
+”Closet App” は、所持している衣服や試着した衣服のサイズ等の情報を記録しておくWebアプリです。  
+カテゴリごとにアイテムの追加、一覧表示、編集、削除（CRUD）が可能です。  
 
-In the project directory, you can run:
+フロントは React で作成し、バックエンド（Oracle DB + Node.js/Express）はローカル環境で動作確認済みです。  
 
-### `npm start`
+## 主な機能
+- カテゴリごとにアイテムの一覧表示
+- アイテムの追加
+- アイテムの編集
+- アイテムの削除
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 使用技術
 
-### `npm test`
+### フロントエンド
+- **React**
+  - コンポーネントベースで画面を構築
+  - `useState` と `useEffect` で状態管理と API 取得を実装
+  - `fetch` を用いたバックエンド API との通信
+- **JavaScript (ES6+)**
+  - 配列の操作、非同期処理、オブジェクト操作など
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### バックエンド（ローカル環境）
+- **Node.js / Express**
+  - REST API を作成（CRUD：Create, Read, Update, Delete）
+  - JSON を受け取り、Oracle DB にデータを格納
+- **Oracle DB**
+  - 服の情報（tops）テーブルに対して SQL 実行
+  - `id, name, brand, size_value, length, chest, sleeve` を管理
+- **CORS / body-parser**
+  - React からのリクエストを受け入れる設定
 
-### `npm run build`
+### 配置・公開
+- **Netlify**
+  - React アプリをビルドして公開
+  - 公開 URL からフロント画面を確認可能
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 現在の進捗
+- フロント：追加フォーム・一覧表示を作成済み
+- バックエンド：CRUD API をローカルで動作確認済み
+- React と API の接続は確認済み（ただし、バックエンドはローカルのみ）
+- 一覧表示に追加データが反映されることは確認済み
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 次の段階
+- バックエンドをクラウド上で公開して、フロントと接続
+- 追加・編集・削除のフル CRUD がオンライン環境で動作することを確認
+- デザイン・スタイリングを整えて見やすくする
+- README に操作方法や技術スタックをまとめる
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
