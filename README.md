@@ -1,26 +1,58 @@
 # Closet App
 
+## 公開 URL
+[Closet App (Netlify)](https://frabjous-cassata-69b307.netlify.app/)
+
 ## 概要
-未完成
+未完成（現在Netlify でフロントのみ公開している段階です。）  
 ”Closet App” は、所持している衣服や試着した衣服のサイズ等の情報を記録しておくWebアプリです。  
 カテゴリごとにアイテムの追加、一覧表示、編集、削除（CRUD）が可能です。  
 
 フロントは React で作成し、バックエンド（Oracle DB + Node.js/Express）はローカル環境で動作確認済みです。  
-現在Netlify でフロントのみ公開しています。
-
-## 公開 URL
-[Closet App (Netlify)](https://frabjous-cassata-69b307.netlify.app/)
-
-※ バックエンドはローカルで動かす必要があります。フロント単体でも一覧表示など UI の動作確認は可能です。
-
-## 使用技術
-- Frontend: React, JavaScript
-- Backend (ローカル環境): Node.js, Express, Oracle DB
-- 配置・公開: Netlify（フロントのみ）
 
 ## 主な機能
 - カテゴリごとにアイテムの一覧表示
 - アイテムの追加
 - アイテムの編集
 - アイテムの削除
+
+
+## 使用技術
+
+### フロントエンド
+- **React**
+  - コンポーネントベースで画面を構築
+  - `useState` と `useEffect` で状態管理と API 取得を実装
+  - `fetch` を用いたバックエンド API との通信
+- **JavaScript (ES6+)**
+  - 配列の操作、非同期処理、オブジェクト操作など
+
+### バックエンド（ローカル環境）
+- **Node.js / Express**
+  - REST API を作成（CRUD：Create, Read, Update, Delete）
+  - JSON を受け取り、Oracle DB にデータを格納
+- **Oracle DB**
+  - 服の情報（tops）テーブルに対して SQL 実行
+  - `id, name, brand, size_value, length, chest, sleeve` を管理
+- **CORS / body-parser**
+  - React からのリクエストを受け入れる設定
+
+### 配置・公開
+- **Netlify**
+  - React アプリをビルドして公開
+  - 公開 URL からフロント画面を確認可能
+
+## 現在の進捗
+- フロント：追加フォーム・一覧表示を作成済み
+- バックエンド：CRUD API をローカルで動作確認済み
+- React と API の接続は確認済み（ただし、バックエンドはローカルのみ）
+- 一覧表示に追加データが反映されることは確認済み
+
+## 次の段階
+- バックエンドをクラウド上で公開して、フロントと接続
+- 追加・編集・削除のフル CRUD がオンライン環境で動作することを確認
+- デザイン・スタイリングを整えて見やすくする
+- README に操作方法や技術スタックをまとめる
+
+
 
